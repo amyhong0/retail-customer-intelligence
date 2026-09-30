@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0c2027">
+  <meta name="description" content="리테일 고객 특성, 개인화 추천, 구매 예측을 하나의 데이터 사이언스 흐름으로 연결한 프로젝트 사례입니다.">
+  <title>리테일 고객 인텔리전스 | 프로젝트 사례</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%230c2027'/%3E%3Cpath d='M14 41V25h9v16m9 0V16h9v25m9 0V30h9v11' fill='none' stroke='%237dd5ca' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="extra.css">
+  <link rel="stylesheet" href="data.css">
+  <script defer src="app.js"></script>
+  <link rel="stylesheet" href="copy.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">본문으로 이동</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#top" aria-label="프로젝트 첫 화면으로 이동"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span><span>리테일 <strong>인텔리전스</strong></span></a>
+      <nav aria-label="주요 메뉴"><a href="#data">데이터·분석</a><a href="#results">모델 결과</a><a href="#insights">인사이트</a><a href="#implementation">구조·구현</a></nav>
+      <span class="header-note">데이터 사이언스 프로젝트</span>
+    </div>
+  </header>
+  <main id="main">
+<section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero-grid wrap">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="eyebrow-line"></span> 01 / 사용 데이터 · dunnhumby</p>
+          <h1 id="hero-title">구매 기록으로<br>고객 행동을 이해하다</h1>
+          <p class="hero-summary">dunnhumby The Complete Journey. 고객 2,500명의 공개 구매 기록을 정제하고, 고객 특성·상품 추천·28일 구매 예측으로 연결했습니다.</p>
+          <div class="hero-actions"><a class="primary-link" href="#data">사용 데이터 보기</a><a class="text-link" href="#results">추천 결과 살펴보기</a></div>
+          <p class="provenance"><span class="provenance-dot" aria-hidden="true"></span> 공식 배포 CSV 분석 · 공통 기준일 DAY 683 · 난수 시드 42</p>
+        </div>
+        <div class="hero-visual" aria-label="거래 데이터가 고객 특성, 추천, 캠페인 점수로 이어지는 분석 흐름">
+          <div class="visual-topline"><span>분석 흐름</span><span>01 — 04</span></div>
+          <div class="flow-main">
+            <div class="flow-node flow-source"><span class="node-index">01 / 사용 데이터</span><strong>2,595,732</strong><small>상품별 거래 기록</small><span class="node-decoration" aria-hidden="true"></span></div>
+            <div class="flow-connector" aria-hidden="true"><span></span><span></span></div>
+            <div class="flow-node flow-features"><span class="node-index">02 / 고객 특성</span><strong>2,500</strong><small>고객별 구매 특성</small><div class="mini-dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="flow-split" aria-hidden="true"></div>
+            <div class="flow-output"><div><span class="node-index">03 / 추천</span><b>상위 10개</b><small>상품 추천</small></div><div><span class="node-index">04 / 예측</span><b>28일</b><small>구매 가능성</small></div></div>
+          </div>
+          <div class="visual-footer"><span>구매 이력 → 고객 특성 → 의사결정</span><span class="signal" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span></div>
+        </div>
+      </div>
+    </section>
+<section class="scope-bar" aria-label="분석 범위"><div class="wrap scope-inner"><div><strong>2,500</strong><span>고객</span></div><div><strong>92,015</strong><span>거래에 등장한 상품</span></div><div><strong>2,581,266</strong><span>정제 후 상품별 거래 기록</span></div><p>출처: dunnhumby 공식 공개 데이터<br>The Complete Journey · DAY 1–711</p></div></section>
+<section class="section evidence-section wrap" id="data" aria-labelledby="data-title"><div class="section-heading"><div><p class="kicker">01 / 데이터 선택</p><h2 id="data-title">dunnhumby<br>The Complete Journey</h2></div><p>한 리테일러를 자주 이용하는 고객 2,500명의 약 2년 구매 기록을 제공하는 공개 데이터입니다. 거래·상품·고객 분류·캠페인 배정 정보를 고객 식별자로 연결했습니다.</p></div><div class="source-card"><div><span>공식 데이터 출처</span><strong>dunnhumby Source Files</strong><p>공식 ZIP에서 내려받은 CSV를 분석했습니다. 상대 일수 DAY 1–711을 시간 기준으로 사용합니다.</p></div><a href="https://www.dunnhumby.com/source-files/" target="_blank" rel="noopener noreferrer">데이터 제공 페이지</a></div><div class="data-table"><div class="data-table-head"><span>입력 파일 · 규모</span><span>주요 열</span><span>분석 용도</span></div><div><strong>transaction_data.csv<br><small>2,595,732행</small></strong><span>household_key · BASKET_ID · DAY · PRODUCT_ID · SALES_VALUE · RETAIL_DISC</span><span>구매 활동과 할인 행동, 추천 학습 이력, 평가 기간의 실제 구매 상품 확인</span></div><div><strong>product.csv<br><small>92,353상품</small></strong><span>PRODUCT_ID · DEPARTMENT · BRAND · COMMODITY_DESC</span><span>상품 카테고리와 브랜드 유형을 거래에 결합해 고객 선호 계산</span></div><div><strong>hh_demographic.csv<br><small>801고객</small></strong><span>익명화된 고객 분류 · 가구 구성 · 주택 소유 구분</span><span>파일을 불러와 고객 정보의 제공 범위를 확인. 예측 모델에는 사용하지 않음</span></div><div><strong>campaign_table.csv<br><small>7,208배정</small></strong><span>household_key · CAMPAIGN · DESCRIPTION</span><span>campaign_desc.csv의 START_DAY와 결합해 기준일 이전 배정 횟수 생성</span></div></div><p class="panel-footnote">상품 파일 92,353개 중 정제 거래에 등장한 상품은 92,015개입니다. 원본 CSV는 재배포하지 않으며 다운로드 출처를 제공합니다.</p></section>
+<section class="section cleaning-section" id="clean"><div class="wrap"><div class="section-heading"><div><p class="kicker">02 / 데이터 준비와 정제</p><h2>구매 기록을 정리하고<br>상품 정보를 연결했습니다</h2></div><p>열 이름·자료형을 통일하고, 유효한 구매를 남긴 뒤 상품 정보를 결합했습니다. 제외한 기록과 최종 분석 규모를 함께 기록했습니다.</p></div><div class="cleaning-funnel"><article><span>원본 거래</span><strong>2,595,732</strong><small>상품별 거래 기록</small></article><i aria-hidden="true">→</i><article><span>정제 제외</span><strong>14,466</strong><small>필수값 누락·정확 중복·수량≤0·금액&lt;0</small></article><i aria-hidden="true">→</i><article><span>분석 거래</span><strong>2,581,266</strong><small>고객 2,500명 · 구매 상품 92,015개</small></article></div><div class="method-cards"><article><span class="method-numeral">01</span><h3>열 이름과 자료형 통일</h3><p>대문자 열 이름을 소문자로 통일하고 RETAIL_DISC를 할인 금액 열로 이름을 바꿨습니다.</p></article><article><span class="method-numeral">02</span><h3>분석할 구매 기록 선택</h3><p>구매 수량이 0보다 크고 판매 금액이 0 이상인 기록만 남겼습니다. 정확히 중복된 행은 한 번만 남겼습니다.</p></article><article><span class="method-numeral">03</span><h3>시간 정보 보존</h3><p>DAY는 상대 일수입니다. 임의의 날짜를 붙이지 않고, 실제 요일을 확인할 수 없는 주말 비율은 이번 모델에서 제외했습니다.</p></article></div></div></section>
+<section class="section features-section" id="features" aria-labelledby="features-title"><div class="wrap"><div class="section-heading"><div><p class="kicker">03 / 고객 특성</p><h2 id="features-title">고객의 구매 행동을<br>12개 특성으로 정리했습니다</h2></div><p>DAY 683까지의 거래와 시작된 캠페인 배정으로 고객 2,500명의 특성을 계산했습니다. 구매 빈도와 지출을 넘어 선호와 구매 리듬을 정리했습니다.</p></div>
+      <div class="feature-grid"><div class="feature-hub"><div class="hub-ring ring-1"></div><div class="hub-ring ring-2"></div><div class="hub-core"><span>고객 특성</span><strong>12</strong><small>정의된 고객 특성</small></div><span class="orbit orbit-a">구매 시점</span><span class="orbit orbit-b">금액·할인</span><span class="orbit orbit-c">상품 선호</span><span class="orbit orbit-d">구매 주기</span></div>
+      <div class="feature-list"><article><span>01</span><div><h3>최근 구매·구매 횟수·지출액</h3><p>최근 구매 이후 경과 일수, 주문 횟수, 누적 지출액을 계산했습니다. 이 세 가지를 RFM이라고 하며, 평균 주문 금액도 함께 계산했습니다.</p></div><b>구매 가치</b></article><article><span>02</span><div><h3>선호와 다양성</h3><p>선호 카테고리·브랜드와 구매한 카테고리 수를 계산했습니다. 구매 예측 모델과 고객 그룹 분석에 사용했습니다.</p></div><b>상품 선호</b></article><article><span>03</span><div><h3>구매 리듬과 할인 반응</h3><p>평균 구매 간격, 구매 금액 대비 할인 금액 비율, 기준일까지 배정된 캠페인 수를 계산했습니다.</p></div><b>구매 행동</b></article></div></div>
+      <div class="reuse-flow" aria-label="고객 특성의 재사용 경로"><span>고객 특성 테이블</span><i aria-hidden="true"></i><span>고객 그룹 분석</span><span>구매 예측</span><span>캠페인 대상 선정</span></div>
+    </div></section>
+<section class="section method-section" id="method" aria-labelledby="method-title"><div class="wrap"><div class="section-heading"><div><p class="kicker">04 / 학습과 평가 분리</p><h2 id="method-title">DAY 683까지 학습하고<br>이후 28일의 구매로 평가했습니다</h2></div><p>DAY 1–683의 기록으로 고객 특성과 모델을 만들고, DAY 684–711의 실제 구매 기록으로 결과를 평가했습니다.</p></div><div class="timeline"><div class="time-block history"><span>DAY 1–683 · 과거 구매</span><strong>고객 특성 계산·모델 구성</strong><div class="time-pattern"></div></div><div class="time-marker"><span>기준일</span><i></i></div><div class="time-block future"><span>DAY 684–711 · 이후 28일</span><strong>구매 여부 확인</strong><div class="future-lines" aria-hidden="true"><i></i><i></i><i></i></div></div></div><div class="method-cards"><article><span class="method-numeral">01</span><h3>추천</h3><p>모든 고객의 DAY 683까지의 거래로 모델을 구성했습니다. 기준일 이후 첫 구매일의 실제 상품으로 추천을 평가하며 재구매 상품도 후보에 포함합니다.</p></article><article><span class="method-numeral">02</span><h3>구매 예측</h3><p>기준일까지 계산한 고객 특성으로 이후 28일 구매 여부를 예측하고 고객 단위로 나눠 평가합니다.</p></article><article><span class="method-numeral">03</span><h3>평가 대상</h3><p>추천은 이후 첫 구매일이 확인된 고객 2,012명으로 평가했습니다. 구매 예측은 고객 2,500명을 학습용 75%와 검증용 25%로 나눴습니다.</p></article></div></div></section>
+<section class="section results wrap" id="results" aria-labelledby="results-title">
+      <div class="section-heading"><div><p class="kicker">05 / 추천 모델 비교</p><h2 id="results-title">구매 이력을 반영하면<br>추천이 더 정확해질까?</h2></div><p>동일한 학습 거래의 구매 수량 상위 1,000상품에서 두 모델을 비교했습니다. 고객 2,012명의 이후 첫 구매일 상품 전체를 정답으로 사용했습니다.</p></div>
+      <div class="model-guide" aria-label="사용한 추천 모델과 구성 방법"><article><span class="panel-overline">비교 기준 모델</span><h3>인기 상품 추천</h3><p>과거에 많이 팔린 상품을 모든 고객에게 같은 순서로 추천합니다.</p><ol><li>DAY 1–683의 상품별 구매 수량을 합산했습니다.</li><li>구매 수량이 많은 상품부터 순위를 정했습니다.</li><li>모든 고객에게 상위 10개 상품을 추천했습니다.</li></ol></article><article><span class="panel-overline">개인화 모델 · Item-based CF</span><h3>상품 기반 협업 필터링</h3><p>여러 고객의 구매 패턴이 비슷한 상품을 찾고, 개인의 구매 이력으로 추천 점수를 계산합니다.</p><ol><li>고객×상품 행렬을 만들고 거래별 log(1+구매 수량)을 고객·상품별로 합산했습니다.</li><li>상품 열 사이의 코사인 유사도를 계산했습니다. 여러 고객의 구매 패턴이 비슷할수록 높은 값입니다.</li><li>고객의 구매 행렬과 상품 유사도 행렬을 곱해 점수를 구하고, 상위 10개를 추천했습니다.</li></ol><p class="panel-footnote">구매 기록으로 행렬과 유사도를 계산했습니다. 이미 구매한 상품도 추천 대상에 포함했습니다.</p></article></div><p class="evaluation-explainer">두 모델은 같은 기간의 구매 기록과 상위 1,000개 상품을 사용했습니다. 학습 기간 이후 첫 구매일에 실제로 산 상품과 추천 10개를 비교했습니다. 고객에게 추천을 실제로 노출한 실험이 아니므로 클릭률이나 매출 증가를 측정한 결과는 아닙니다.</p><div class="results-grid">
+        <div class="panel comparison-panel">
+          <div class="panel-heading"><div><span class="panel-overline">과거 구매 기록으로 평가한 추천 성능</span><h3>두 모델의 지표 비교</h3></div><div class="tab-list" role="tablist" aria-label="비교 지표"><button class="tab active" type="button" role="tab" aria-selected="true" data-metric="ndcg">NDCG@10</button><button class="tab" type="button" role="tab" aria-selected="false" data-metric="recall">Recall@10</button><button class="tab" type="button" role="tab" aria-selected="false" data-metric="precision">Precision@10</button></div></div>
+          <p class="metric-help" id="metric-help" aria-live="polite">NDCG@10: 실제 구매한 상품이 추천 10개 중 높은 순위에 있는지 평가합니다. 값이 클수록 좋습니다.</p><div class="chart-comparison" role="img" aria-label="인기 상품 추천과 상품 기반 협업 필터링의 NDCG 10 비교">
+            <div class="comparison-row"><div class="comparison-label">인기 상품 추천</div><div class="bar-track"><div class="bar baseline" id="baseline-bar"></div></div><strong id="baseline-value">0.0396</strong></div>
+            <div class="comparison-row"><div class="comparison-label">상품 기반 협업 필터링</div><div class="bar-track"><div class="bar candidate" id="candidate-bar"></div></div><strong id="candidate-value">0.1227</strong></div>
+          </div>
+          <div class="chart-axis" aria-hidden="true"><span>0</span><span>0.05</span><span>0.10</span><span>0.15</span><span>0.20</span></div>
+          <div class="comparison-conclusion"><span class="delta" id="metric-delta">+209.8%</span><p id="metric-description">인기 상품 추천 대비 NDCG@10이 209.8% 높았습니다. 실제 구매한 상품이 추천 목록의 위쪽에 더 많이 나타났습니다.</p></div>
+        </div>
+        <aside class="result-aside"><div class="dark-card"><p class="panel-overline">핵심 관찰</p><div class="big-number">+210<span>%</span></div><p>NDCG@10 상대 개선</p><div class="card-divider"></div><span>개인별 구매 이력을 반영한 모델이 인기 상품 추천보다 실제 구매 상품을 더 높은 순위에 배치했습니다.</span></div><div class="note-card"><div class="note-icon" aria-hidden="true">↗</div><p>후보 1,000개 상품은 평가 기간 거래 기록의 33.8%를 차지합니다. 후보에 없는 구매 상품도 평가 정답에 포함했습니다. </p></div></aside>
+      </div>
+    </section>
+<section class="section prediction wrap" id="prediction" aria-labelledby="prediction-title"><div class="section-heading"><div><p class="kicker">06 / 28일 구매 예측</p><h2 id="prediction-title">다음 28일에 구매할 고객을<br>예측했습니다</h2></div><p>고객 특성으로 다음 28일의 구매 여부를 예측했습니다. 학습에 사용하지 않은 고객으로 성능과 각 특성의 중요도를 확인했습니다.</p></div>
+      <p class="evaluation-explainer">사용 모델은 scikit-learn의 HistGradientBoostingClassifier입니다. 고객의 75%로 학습하고 25%로 평가했습니다. 구매 고객 비율이 비슷하도록 나누고, 결측값을 채운 뒤 범주형 특성을 숫자로 변환했습니다. 설정은 최대 160회 반복, 학습률 0.06, 트리마다 최대 끝 노드 15개, 난수 시드 42입니다.</p><div class="prediction-grid"><div class="panel importance-panel"><div class="panel-heading"><div><span class="panel-overline">검증 데이터 기준</span><h3>구매 예측에 중요했던 고객 특성</h3></div><span class="small-tag">특성 값을 섞었을 때의 성능 감소</span></div><div class="importance-list"><div><span>최근 구매 이후 경과 일수</span><div class="importance-track"><i style="width:100%"></i></div><b>0.0622</b></div><div><span>구매 카테고리 다양성</span><div class="importance-track"><i style="width:18.006430868167204%"></i></div><b>0.0112</b></div><div><span>평균 구매 간격</span><div class="importance-track"><i style="width:12.379421221864954%"></i></div><b>0.0077</b></div><div><span>누적 구매 수량</span><div class="importance-track"><i style="width:5.627009646302251%"></i></div><b>0.0035</b></div><div><span>기준일까지의 캠페인 배정 횟수</span><div class="importance-track"><i style="width:4.340836012861737%"></i></div><b>0.0027</b></div></div><p class="panel-footnote">각 특성의 값을 무작위로 섞어 예측 성능이 얼마나 낮아지는지 측정했습니다. 값이 클수록 모델이 그 특성에 더 의존했다는 뜻입니다. </p></div><div class="prediction-stats"><div class="stat-panel"><span>ROC-AUC · 고객 단위 검증</span><strong>0.836</strong><div class="meter"><i style="width:83.55%"></i></div><p>구매 고객을 비구매 고객보다 높은 점수로 구분하는 능력입니다. 0.5는 무작위 수준, 1은 완벽한 구분입니다.</p></div><div class="stat-panel"><span>평균 정밀도 · 고객 단위 검증</span><strong>0.951</strong><div class="meter apr"><i style="width:95.1%"></i></div><p>구매 가능성 순위의 정확성을 나타내는 지표입니다. 학습에 사용하지 않은 고객의 구매 여부로 평가한 결과는 0.951입니다.</p></div></div></div>
+    </section>
+<section class="section insights-section" id="insights"><div class="wrap"><div class="section-heading"><div><p class="kicker">07 / 분석 결과와 인사이트</p><h2>구매 이력과 구매 주기에서<br>추천·예측에 필요한 정보를 얻었습니다</h2></div><p>데이터에서 관찰한 모델 결과를 정리했습니다.</p></div><div class="insight-grid"><article><span class="insight-index">01 / 추천</span><strong>0.0396 → 0.1227</strong><h3>구매 이력을 반영한 추천이 더 정확했습니다.</h3><p>인기 상품 추천과 상품 기반 협업 필터링을 비교했습니다. 개인화 모델의 NDCG@10은 209.8% 높았고, Recall@10은 0.0367에서 0.0834로 높아졌습니다.</p></article><article><span class="insight-index">02 / 고객 행동</span><strong>최근 구매 · 다양성 · 주기</strong><h3>최근 구매 시점이 구매 예측에 가장 중요했습니다.</h3><p>최근 구매 이후 경과 일수의 값을 섞었을 때 성능이 가장 크게 낮아졌습니다(0.0622). 구매한 카테고리 수와 평균 구매 간격도 예측에 중요한 정보였습니다.</p></article><article><span class="insight-index">03 / 구매 예측</span><strong>AUC 0.836</strong><h3>고객 특성으로 이후 구매 여부를 예측했습니다.</h3><p>12개 고객 특성으로 다음 28일의 구매 여부를 예측했습니다. 학습에 사용하지 않은 고객의 ROC-AUC는 0.836, 평균 정밀도는 0.951이었습니다.</p></article></div></div></section>
+<section class="section implementation wrap" id="implementation" aria-labelledby="implementation-title"><div class="section-heading"><div><p class="kicker">08 / 구현 아키텍처</p><h2 id="implementation-title">CSV 입력부터<br>분석 결과 저장까지</h2></div><p>Python 실행 스크립트가 CSV를 불러와 정제한 뒤, 추천 모델과 구매 예측 모델을 실행하고 지표·고객 특성·그래프를 저장합니다.</p></div>
+      <div class="pipeline-diagram" aria-label="현재 분석 구조"><div class="pipeline-stage"><span>입력</span><strong>거래·상품·고객·캠페인 CSV</strong><small>data.py · 로딩과 정제</small></div><div class="pipeline-stage"><span>실행</span><strong>run_analysis.py</strong><small>정제 데이터를 두 모델에 전달</small></div><div class="pipeline-branches"><div><span>추천</span><strong>구매 행렬 · 상품 유사도</strong><small>recommender.py · 인기 상품과 개인화 추천 비교</small></div><div><span>구매 예측</span><strong>고객 특성 12개 · 구매 여부 예측</strong><small>features.py → prediction.py</small></div></div><div class="pipeline-stage"><span>저장</span><strong>outputs/</strong><small>지표 · 고객 특성 · 그래프 · 학습 모델</small></div></div>
+      <div class="implementation-grid"><div class="folder-panel"><h3>프로젝트 폴더 구조</h3><pre aria-label="프로젝트 폴더 구조">retail-customer-intelligence/
+├─ README.md              프로젝트 설명
+├─ requirements.txt       실행 환경
+├─ run_analysis.py        전체 분석 실행
+├─ data/
+│  ├─ README.md           데이터 준비 안내
+│  └─ raw/                원본 CSV 위치
+├─ src/
+│  ├─ data.py             데이터 로딩·정제
+│  ├─ features.py         고객 특성 생성
+│  ├─ recommender.py      추천·순위 평가
+│  └─ prediction.py       구매 예측·중요도
+├─ tests/                 고객 특성·추천 검증
+├─ outputs/               지표·그래프·고객 결과
+├─ docs/                  분석 문서·작업 기록
+└─ site/dist/             이 포트폴리오 사이트</pre></div><div class="artifact-panel"><h3>분석 결과물</h3><ul><li><b>추천 지표</b><span>두 모델의 Precision@10·Recall@10·NDCG@10</span></li><li><b>고객 특성</b><span>고객 2,500명의 고객 특성 테이블과 정의·갱신 주기 사전</span></li><li><b>구매 예측</b><span>학습 모델, 고객 특성 중요도, 구매 예측 점수 상위 50명과 고객 그룹</span></li><li><b>실행 근거</b><span>고정 시드 42, 분석 정상 종료, 특성 계산 기준일·추천 지표 테스트</span></li></ul></div></div>
+    </section>
+
+</main>
+  <footer class="footer"><div class="wrap footer-inner"><div><span class="footer-brand">리테일 인텔리전스</span><p>거래 데이터 · 고객 특성 · 추천 · 구매 예측</p></div><p>데이터: dunnhumby 공식 공개 CSV<br>The Complete Journey · DAY 1–711</p><a href="#top">맨 위로 ↑</a></div></footer>
+</body>
+</html>

@@ -1,0 +1,13 @@
+feature,definition,refresh_cadence
+recency,마지막 구매 이후 경과 일수,매일
+frequency,기준일까지의 고유 장바구니 수,매일
+monetary,누적 실구매 금액,매일
+units,누적 구매 수량,매일
+discount_amount,누적 할인 금액,매일
+avg_order_value,장바구니당 평균 구매 금액,매일
+discount_sensitivity,할인액을 할인 전 구매 금액으로 나눈 비율,매일
+purchase_interval,장바구니 간 평균 구매 간격(일),매주
+category_diversity,구매한 서로 다른 상품 카테고리 수,매주
+preferred_category,구매 금액이 가장 높은 상품 카테고리,매주
+preferred_brand,구매 금액이 가장 높은 브랜드 유형,매주
+campaign_exposures,캠페인 배정 횟수,캠페인별

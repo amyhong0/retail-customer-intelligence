@@ -1,0 +1,38 @@
+name: 포트폴리오 사이트 배포
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'site/dist/**'
+      - '.github/workflows/pages.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    name: GitHub Pages 배포
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: 소스 확인
+        uses: actions/checkout@v6
+      - name: Pages 준비
+        uses: actions/configure-pages@v5
+      - name: 사이트 파일 업로드
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: site/dist
+      - name: 사이트 배포
+        id: deployment
+        uses: actions/deploy-pages@v4

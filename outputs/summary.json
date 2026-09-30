@@ -1,0 +1,59 @@
+{
+  "data_source": "dunnhumby_complete_journey",
+  "rows": 2581266,
+  "households": 2500,
+  "products": 92015,
+  "raw_rows": 2595732,
+  "product_table_rows": 92353,
+  "demographic_rows": 801,
+  "campaign_rows": 7208,
+  "day_min": 1,
+  "day_max": 711,
+  "cutoff_day": 683,
+  "feature_count": 12,
+  "recommendation_catalog": 1000,
+  "recommendation_users": 2012,
+  "recommendation_truth_coverage": 0.33803845217814554,
+  "recommendation": [
+    {
+      "model": "인기 상품",
+      "precision@10": 0.007,
+      "recall@10": 0.0367,
+      "ndcg@10": 0.0396
+    },
+    {
+      "model": "상품 협업 필터링",
+      "precision@10": 0.0714,
+      "recall@10": 0.0834,
+      "ndcg@10": 0.1227
+    }
+  ],
+  "propensity": {
+    "roc_auc_holdout": 0.8355,
+    "average_precision_holdout": 0.951,
+    "positive_rate": 0.8048
+  },
+  "top_propensity_features": [
+    {
+      "feature": "recency",
+      "importance": 0.0622
+    },
+    {
+      "feature": "category_diversity",
+      "importance": 0.0112
+    },
+    {
+      "feature": "purchase_interval",
+      "importance": 0.0077
+    },
+    {
+      "feature": "units",
+      "importance": 0.0035
+    },
+    {
+      "feature": "campaign_exposures",
+      "importance": 0.0027
+    }
+  ],
+  "caveat": "구매 예측 지표는 고객 단위 층화 검증 결과입니다. 운영 단계에서는 여러 기준일의 시계열 검증이 필요합니다."
+}

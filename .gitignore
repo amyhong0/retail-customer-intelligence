@@ -1,0 +1,12 @@
+data/raw/*.csv
+!data/raw/.gitkeep
+__pycache__/
+*.pyc
+.venv/
+.mplconfig/
+.env
+.env.*
+!.env.example
+site/.git/
+site/.openai/
+agent-workspace/
