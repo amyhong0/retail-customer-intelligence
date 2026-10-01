@@ -14,7 +14,7 @@ function renderMetric(key){
   document.getElementById('metric-delta').textContent=`+${((metric.candidate/metric.baseline-1)*100).toFixed(1)}%`;
   document.getElementById('metric-description').textContent=metric.description;
   document.getElementById('metric-help').textContent=metric.help;
-  document.querySelector('.chart-comparison').setAttribute('aria-label',`인기 상품 추천과 상품 협업 필터링의 ${metric.label} 비교: ${metric.baseline.toFixed(4)} 대 ${metric.candidate.toFixed(4)}`);
+  document.querySelector('.chart-comparison').setAttribute('aria-label',`인기 상품 추천과 구매 이력 기반 개인화 추천의 ${metric.label} 비교: ${metric.baseline.toFixed(4)} 대 ${metric.candidate.toFixed(4)}`);
 }
 tabs.forEach((tab,index)=>{
   tab.addEventListener('click',()=>renderMetric(tab.dataset.metric));
